@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: personal-webapp-deployment
+  namespace: {{ .Values.namespace }}
+  labels: 
+    app: personal-webapp
+spec:
+  replicas: {{ .Values.replicas }}
+  selector:
+    matchLabels:
+      app: personal-webapp
+  template:
+    metadata:
+      labels:
+        app: personal-webapp
+    spec:
+      containers:
+        - name: personal-webapp
+          image: harbor.sch.bme.hu/personal-valentin/valko-webapp:v2025.11.03.223111
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: 200m
+              memory: 200Mi
+            limits:
+              cpu: 350m
+              memory: 400Mi
+      imagePullSecrets:
+        - name: harbor-registry
