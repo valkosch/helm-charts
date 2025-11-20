@@ -1,0 +1,9 @@
+apiVersion: v2
+name: currently-playing-v41k0
+description: Helm chart for the currently-playing
+
+type: application
+
+version: 0.0.1
+
+appVersion: "0.0.2"

@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: currently-playing-webapp-deployment
+  namespace: {{ .Values.namespace }}
+  labels: 
+    app: currently-playing-webapp
+spec:
+  replicas: {{ .Values.replicas }}
+  selector:
+    matchLabels:
+      app: currently-playing-webapp
+  template:
+    metadata:
+      labels:
+        app: currently-playing-webapp
+    spec:
+      containers:
+        - name: currently-playing-webapp
+          image: harbor.sch.bme.hu/personal-valentin/valko-currently-playing@sha256:9dcb37a4765533884ff527c81b714e5fee11467abfe13b9b82d5355ad2a0f369
+          ports:
+            - containerPort: 3000
+          resources:
+            requests:
+              cpu: 50m
+              memory: 100Mi
+            limits:
+              cpu: 100m
+              memory: 150Mi
+          envFrom:
+            - secretRef:
+                name: valko-currently-playing-secrets
+      imagePullSecrets:
+        - name: harbor-registry
