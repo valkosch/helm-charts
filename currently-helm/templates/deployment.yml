@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: currently-playing-webapp
-          image: harbor.sch.bme.hu/personal-valentin/valko-currently-playing@sha256:9dcb37a4765533884ff527c81b714e5fee11467abfe13b9b82d5355ad2a0f369
+          image: harbor.sch.bme.hu/personal-valentin/valko-currently-playing:{{ .Values.tag }}
           ports:
             - containerPort: 3000
           resources:
