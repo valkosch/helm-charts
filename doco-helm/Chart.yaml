@@ -1,0 +1,9 @@
+apiVersion: v2
+name: docosaurus-v41k0
+description: Helm chart for the docosaurus
+
+type: application
+
+version: 0.0.1
+
+appVersion: "0.0.2"

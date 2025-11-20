@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: docosaurus-service
+  namespace: {{ .Values.namespace }}
+spec:
+  selector:
+    app: docosaurus-webapp
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  type: LoadBalancer
