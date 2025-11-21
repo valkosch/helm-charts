@@ -3,6 +3,8 @@ kind: Service
 metadata:
   name: currently-playing-webapp-service
   namespace: {{ .Values.namespace }}
+  annotations:
+    external-dns.alpha.kubernetes.io/hostname: currently-playing.lan
 spec:
   selector:
     app: currently-playing-webapp
