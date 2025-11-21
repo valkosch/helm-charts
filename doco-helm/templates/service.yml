@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: docosaurus-service
   namespace: {{ .Values.namespace }}
-    annotations:
+  annotations:
     external-dns.alpha.kubernetes.io/hostname: blog.lan
 spec:
   selector:
