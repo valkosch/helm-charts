@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: docosaurus-webapp
-          image: harbor.sch.bme.hu/personal-valentin/docosaurus:{{ .Values.tag }}
+          image: harbor.sch.bme.hu/personal-valentin/doco-webapp:{{ .Values.tag }}
           ports:
             - containerPort: 80
           resources:
