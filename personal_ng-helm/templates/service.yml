@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: personal-ng-webapp-service
+  namespace: {{ .Values.namespace }}
+  annotations:
+    external-dns.alpha.kubernetes.io/hostname: valkoweb.lan
+spec:
+  selector:
+    app: personal-ng-webapp
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 3000
+  type: LoadBalancer
