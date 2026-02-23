@@ -27,6 +27,9 @@ spec:
             limits:
               cpu: 350m
               memory: 400Mi
+          env:
+            - name: NODE_OPTIONS
+              value: "--dns-result-order=ipv4first"
           envFrom:
             - secretRef:
                 name: personal-ng-webapp-secrets
