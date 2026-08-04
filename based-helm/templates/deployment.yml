@@ -19,7 +19,7 @@ spec:
         - name: based-webapp
           image: harbor.sch.bme.hu/personal-valentin/based-webapp:{{ .Values.tag }}
           ports:
-            - containerPort: 80
+            - containerPort: 3000
           resources:
             requests:
               cpu: 200m
