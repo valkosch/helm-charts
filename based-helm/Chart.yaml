@@ -1,0 +1,9 @@
+apiVersion: v2
+name: based-v41k0
+description: Helm chart for the website basedware
+
+type: application
+
+version: 0.0.1
+
+appVersion: "0.0.1"

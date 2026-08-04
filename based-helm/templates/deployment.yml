@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: based-webapp-deployment
+  namespace: {{ .Values.namespace }}
+  labels: 
+    app: based-webapp
+spec:
+  replicas: {{ .Values.replicas }}
+  selector:
+    matchLabels:
+      app: based-webapp
+  template:
+    metadata:
+      labels:
+        app: based-webapp
+    spec:
+      containers:
+        - name: based-webapp
+          image: harbor.sch.bme.hu/personal-valentin/based-webapp:{{ .Values.tag }}
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: 200m
+              memory: 200Mi
+            limits:
+              cpu: 350m
+              memory: 400Mi
+      imagePullSecrets:
+        - name: harbor-registry
