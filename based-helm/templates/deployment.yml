@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: based-webapp
-          image: harbor.sch.bme.hu/personal-valentin/based-webapp:{{ .Values.tag }}
+          image: harbor.sch.bme.hu/personal-valentin/based-webapp:{{ .Values.image.tag }}
           ports:
             - containerPort: 3000
           resources:
