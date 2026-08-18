@@ -20,6 +20,9 @@ spec:
           image: harbor.sch.bme.hu/personal-valentin/based-webapp:{{ .Values.image.tag }}
           ports:
             - containerPort: 3000
+          env:
+            - name: PROSODY_HOST
+              value: "https://xmpp.basedware.xyz"
           resources:
             requests:
               cpu: 200m
