@@ -22,7 +22,7 @@ spec:
             - containerPort: 3000
           env:
             - name: PROSODY_HOST
-              value: "https://xmpp.basedware.xyz"
+              value: "https://xmpp.basedware.xyz:5281"
           resources:
             requests:
               cpu: 200m
